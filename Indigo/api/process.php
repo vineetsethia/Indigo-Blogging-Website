@@ -16,6 +16,9 @@ $deleteuser="";
 $deletepost="";
 $user="";
 $password="";
+$activeuser="";
+$activepost="";
+
 $unactiveuser=$_POST['unactive'];
 
 $deleteuser=$_POST['deleteuser'];
@@ -25,6 +28,10 @@ $unactivepost=$_POST['unactivepost'];
 $user=$_POST['user'];
 
 $password=$_POST['pass'];
+
+$activeuser=$_POST['active'];
+
+$activepost=$_POST['activepost'];
 
 if($unactiveuser!="")
 {
@@ -77,7 +84,36 @@ else if($user!="" && $password!="")
   else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
+  
 	
        mysqli_close($conn);
 }
+else if($activeuser!="")
+{
+	$sql = "UPDATE blogger_info SET blogger_is_active='yes' where blogger_username='$activeuser'";
+   if (mysqli_query($conn, $sql)) {
+    header('Location: control.php');    
+
+   } 
+  else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  }
+	
+       mysqli_close($conn);
+}
+else if($activepost!="")
+{
+	$sql = "UPDATE blog_details SET blog_is_active='yes' where blog_id=$activepost";
+		  $sqltwo = "UPDATE blog_master SET blog_is_active='yes' where blog_id=$activepost";
+   if (mysqli_query($conn, $sql) || mysqli_query($conn, $sqltwo)) {
+    header('Location: control.php');    
+
+   } 
+  else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  }
+	
+       mysqli_close($conn);
+}
+
 ?>

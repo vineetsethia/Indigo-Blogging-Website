@@ -84,12 +84,15 @@ if (!$conn) {
 <iframe width="100%" height="300px" src="demo.php" name="iframe_a"></iframe>
 <br>
 <form action="process.php" method="post">
- <b>Services: </b> <input type="text" id="unactive" name="unactive" placeholder="Enter User Name" value=""> <input type="submit" class="btn btn-info" value="Unactive User">
+ <input type="text" id="unactive" name="unactive" placeholder="Enter User Name" value=""> <input type="submit" class="btn btn-info" value="Unactive User">
  <input type="text" id="deleteuser" name="deleteuser" placeholder="Enter User Name" value=""> <input type="submit" class="btn btn-info" value="Delete User">
  <input type="text" id="unactivepost" name="unactivepost" placeholder="Enter Post ID" value=""> <input type="submit" class="btn btn-info" value="Unactive Post">
  <input type="text" id="user" name="user" placeholder="Enter User Name" value=""> 
-<input type="text" id="pass" name="pass" placeholder="Enter Password" value=""> 
-<input type="submit" class="btn btn-info" value="Change Password">
+<input type="text" id="pass" name="pass" placeholder="Enter Password" value="">
+<input type="submit" class="btn btn-info" value="Change Password"> <br><br>
+<input type="text" id="active" name="active" placeholder="Enter User Name" value=""> <input type="submit" class="btn btn-info" value="Active User">
+<input type="text" id="activepost" name="activepost" placeholder="Enter Post ID" value=""> <input type="submit" class="btn btn-info" value="Active Post">
+
 </form>
 </div>
 </main>
